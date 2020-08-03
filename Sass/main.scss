@@ -1,0 +1,58 @@
+/* Variabes */  
+$blue: #6479e3;
+$grey:#f3f3f3;
+$white: #fff;
+$color-primary:$blue ;
+
+/* Mixin's */  
+@mixin corners ($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius; 
+    -khtml-border-radius: $radius; 
+ }
+
+
+body{
+    background-color: $color-primary;
+    position: relative;
+}
+
+.stopwatch{
+    text-align: center;
+    color: $white;
+    width: 500px;
+    position: absolute;
+    top: 300px;
+    left: 35%;
+    
+    h1{
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+
+    p{
+        font-size: 50px;
+    }
+
+    button{
+        @include corners(5px);
+        background:$color-primary;
+        color:$white;
+        border: solid 1px $white;
+        text-decoration:none;
+        cursor:pointer;
+        font-size:1.2em;
+        padding:18px 10px;
+        width:120px;
+        margin: 10px;
+        outline: none;
+
+        &:hover{
+            transition: all 0.5s ease-in-out;
+            background:$white;
+            border: solid 1px $white;
+            color:$color-primary;
+        }
+    }
+}
